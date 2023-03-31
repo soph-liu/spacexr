@@ -62,7 +62,7 @@ build.designmatrix.single <- function(myRCTD, explanatory.variable) {
     stop(paste0('build.designmatrix.single: ', length(barcodes),
                 ' common barcode names found between explanatory.variable and myRCTD@spatialRNA. Please ensure that more common barcodes are found'))
   explanatory.variable <- explanatory.variable[barcodes]
-  if(max(explanatory.variable) - min(explanatory.variable) < 1e-9)
+  if(max(explanatory.variable) == min(explanatory.variable))
     stop('build.designmatrix.single: values of explanatory.variable are constant. Please increase the range of this variable.')
   explanatory.variable <- explanatory.variable - min(explanatory.variable)
   explanatory.variable <- explanatory.variable / max(explanatory.variable) # standardize
