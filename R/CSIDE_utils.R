@@ -219,6 +219,7 @@ choose_cell_types <- function(myRCTD, barcodes, doublet_mode, cell_type_threshol
                               my_beta, thresh, cell_type_filter) {
   cell_type_count <- aggregate_cell_types(myRCTD, barcodes, doublet_mode = doublet_mode)
   cell_types_default <- names(which(cell_type_count >= cell_type_threshold))
+  cell_types <- cell_types_default
   passed_cell_types = !is.null(cell_types)
   if(passed_cell_types) {
     diff_types <- setdiff(cell_types, cell_types_default)
